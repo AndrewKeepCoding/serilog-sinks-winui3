@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Serilog.Sinks.WinUi3.ItemsRepeaterSample (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "Serilog.Sinks.WinUi3.ItemsRepeaterSample (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
