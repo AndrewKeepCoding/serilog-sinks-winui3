@@ -38,7 +38,7 @@
     <ProjectCapability Include="Msix" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Serilog.Sinks.WinUi3.LogViewModels\Serilog.Sinks.WinUi3.LogViewModels.csproj" />
+    <ProjectReference Include="..\..\src\Serilog.Sinks.WinUi3.LogViewModels\Serilog.Sinks.WinUi3.LogViewModels.csproj" />
     <ProjectReference Include="..\..\src\Serilog.Sinks.WinUi3\Serilog.Sinks.WinUi3.csproj" />
   </ItemGroup>
 </Project>
