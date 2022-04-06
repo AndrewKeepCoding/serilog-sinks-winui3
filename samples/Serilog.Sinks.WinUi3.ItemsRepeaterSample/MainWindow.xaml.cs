@@ -135,7 +135,7 @@ public sealed partial class MainWindow : Window
                                 Log.Logger.Error("Source:{SourceId:00} Value:{Value:00} Index:{Index:00000}", sourceId, value, index);
                                 break;
                             default:
-                                Log.Logger.Fatal(new Exception("FATAL EXCEPTION!"), "Something extreamly wrong happend! Source:{SourceId:00} Value:{Value:0} Index:{Index:00000}", sourceId, value, index);
+                                Log.Logger.Fatal(new Exception("FATAL EXCEPTION!"), "Something wrong happened! Source:{SourceId:00} Value:{Value:0} Index:{Index:00000}", sourceId, value, index);
                                 break;
                         }
                         index++;
