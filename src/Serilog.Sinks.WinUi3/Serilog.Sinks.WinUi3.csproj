@@ -6,7 +6,28 @@
     <RuntimeIdentifiers>win10-x86;win10-x64;win10-arm64</RuntimeIdentifiers>
     <UseWinUI>true</UseWinUI>
     <Nullable>enable</Nullable>
+    <PackageId>Serilog.Sinks.WinUi3</PackageId>
+    <Version>0.0.1-alpha</Version>
+    <Authors>Andrew KeepCoding</Authors>
+    <Company>Andrew KeepCoding</Company>
+    <Description>A Serilog sink that writes log events to WinUI 3 collection controls like ItemsRepeater.</Description>
+    <Product>Serilog.Sinks.WinUi3</Product>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageProjectUrl>https://github.com/AndrewKeepCoding/serilog-sinks-winui3</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/AndrewKeepCoding/serilog-sinks-winui3</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>serilog;serilog-sink;logging;winui3;itemsrepeater</PackageTags>
+    <Copyright>Copyright (c) Andrew KeepCoding 2022</Copyright>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
   </PropertyGroup>
+  <ItemGroup>
+    <None Include="..\..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
 
   <ItemGroup>
       <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.0.1" />
