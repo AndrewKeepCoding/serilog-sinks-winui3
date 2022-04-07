@@ -7,7 +7,7 @@
     <UseWinUI>true</UseWinUI>
     <Nullable>enable</Nullable>
     <PackageId>Serilog.Sinks.WinUi3</PackageId>
-    <Version>0.0.1-alpha</Version>
+    <Version>0.1.0-alpha</Version>
     <Authors>Andrew KeepCoding</Authors>
     <Company>Andrew KeepCoding</Company>
     <Description>A Serilog sink that writes log events to WinUI 3 collection controls like ItemsRepeater.</Description>
