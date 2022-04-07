@@ -14,6 +14,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "assets", "assets", "{47AAF3D1-5198-4BDA-B024-610F6C8BF67A}"
 	ProjectSection(SolutionItems) = preProject
 		assets\itemsrepeater-sample-screenshot.png = assets\itemsrepeater-sample-screenshot.png
+		assets\serilog-sink-nuget.png = assets\serilog-sink-nuget.png
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Serilog.Sinks.WinUi3.LogViewModels", "src\Serilog.Sinks.WinUi3.LogViewModels\Serilog.Sinks.WinUi3.LogViewModels.csproj", "{EE372975-911A-4A89-A29F-EE15E5771EBE}"
