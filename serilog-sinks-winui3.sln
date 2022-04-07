@@ -13,13 +13,18 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Serilog.Sinks.WinUi3.ItemsR
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "assets", "assets", "{47AAF3D1-5198-4BDA-B024-610F6C8BF67A}"
 	ProjectSection(SolutionItems) = preProject
-		.gitattributes = .gitattributes
-		.gitignore = .gitignore
-		itemsrepeater-sample-screenshot.png = itemsrepeater-sample-screenshot.png
-		README.md = README.md
+		assets\itemsrepeater-sample-screenshot.png = assets\itemsrepeater-sample-screenshot.png
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Serilog.Sinks.WinUi3.LogViewModels", "src\Serilog.Sinks.WinUi3.LogViewModels\Serilog.Sinks.WinUi3.LogViewModels.csproj", "{EE372975-911A-4A89-A29F-EE15E5771EBE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "items", "items", "{D8A8B14A-7719-4C64-8178-7FDCD3448D91}"
+	ProjectSection(SolutionItems) = preProject
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
+		LICENSE = LICENSE
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
