@@ -57,9 +57,10 @@ internal class WinUi3Sink : ILogEventSink, IDisposable
                     while (await timer.WaitForNextTickAsync(cancellationToken) is true)
                     {
                         stopwatch.Restart();
-                        await foreach (LogEvent item in _channel.Reader.ReadAllAsync(cancellationToken))
+                        while (_channel.Reader.TryRead(out LogEvent? logEvent) is true)
                         {
-                            cache.Add(item);
+                            if (logEvent is not null)
+                                cache.Add(logEvent);
 
                             if (stopwatch.ElapsedMilliseconds > _loggingInterval.Milliseconds)
                                 break;
