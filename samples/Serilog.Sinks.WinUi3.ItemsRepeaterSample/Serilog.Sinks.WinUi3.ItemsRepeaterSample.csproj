@@ -29,8 +29,6 @@
     <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.22000.197" />
     <PackageReference Include="Serilog" Version="2.10.0" />
     <PackageReference Include="Serilog.Expressions" Version="3.3.0" />
-    <PackageReference Include="Serilog.Sinks.WinUi3" Version="0.0.1-alpha" />
-    <PackageReference Include="Serilog.Sinks.WinUi3.LogViewModels" Version="0.0.1-alpha" />
     <Manifest Include="$(ApplicationManifest)" />
   </ItemGroup>
 
@@ -39,6 +37,10 @@
        package has not yet been restored -->
   <ItemGroup Condition="'$(DisableMsixProjectCapabilityAddedByProject)'!='true' and '$(EnablePreviewMsixTooling)'=='true'">
     <ProjectCapability Include="Msix" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Serilog.Sinks.WinUi3.LogViewModels\Serilog.Sinks.WinUi3.LogViewModels.csproj" />
+    <ProjectReference Include="..\..\src\Serilog.Sinks.WinUi3\Serilog.Sinks.WinUi3.csproj" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\assets\serilog-sink-nuget.png">
