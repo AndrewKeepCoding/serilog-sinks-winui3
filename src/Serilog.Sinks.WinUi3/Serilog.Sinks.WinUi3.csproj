@@ -7,7 +7,7 @@
     <UseWinUI>true</UseWinUI>
     <Nullable>enable</Nullable>
     <PackageId>Serilog.Sinks.WinUi3</PackageId>
-    <Version>0.1.0-alpha</Version>
+    <Version>0.1.1-alpha</Version>
     <Authors>Andrew KeepCoding</Authors>
     <Company>Andrew KeepCoding</Company>
     <Description>A Serilog sink that writes log events to WinUI 3 collection controls like ItemsRepeater.</Description>
@@ -21,11 +21,25 @@
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <PackageIcon>serilog-sink-nuget.png</PackageIcon>
   </PropertyGroup>
+  <ItemGroup>
+    <None Include="..\..\assets\serilog-sink-nuget.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
 
   <ItemGroup>
       <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.0.1" />
       <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.22000.197" />
       <PackageReference Include="Serilog" Version="2.10.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
 </Project>

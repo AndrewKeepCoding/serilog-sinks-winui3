@@ -12,7 +12,7 @@
     <Company>Andrew KeepCoding</Company>
     <Copyright>Copyright (c) Andrew KeepCoding 2022</Copyright>
     <Product>Serilog.Sinks.WinUi3.LogViewModels</Product>
-    <Description>Basic LogViewModels for Serilog.Sinks.WinUi3 sink.</Description>
+    <Description>Basic LogViewModels for Serilog.Sinks.WinUi3, a Serilog sink that writes log events to WinUI 3 collection controls like ItemsRepeater.</Description>
     <PackageProjectUrl>https://github.com/AndrewKeepCoding/serilog-sinks-winui3</PackageProjectUrl>
     <RepositoryUrl>https://github.com/AndrewKeepCoding/serilog-sinks-winui3</RepositoryUrl>
     <PackageReadmeFile>README.md</PackageReadmeFile>
@@ -27,5 +27,12 @@
       <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.0.0" />
       <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.22000.194" />
       <PackageReference Include="Serilog" Version="2.10.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
 </Project>

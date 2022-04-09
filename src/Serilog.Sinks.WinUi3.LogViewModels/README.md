@@ -1,0 +1,2 @@
+# 📃 Serilog.Sinks.WinUi3
+Basic LogViewModels for [Serilog.Sinks.WinUi3](https://github.com/AndrewKeepCoding/serilog-sinks-winui3), a [Serilog](https://github.com/serilog/serilog) sink that writes log events to WinUI 3 collection controls like [ItemsRepeater](https://docs.microsoft.com/en-us/windows/apps/design/controls/items-repeater).
