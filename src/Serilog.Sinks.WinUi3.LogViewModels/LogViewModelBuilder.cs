@@ -21,6 +21,8 @@ public class LogViewModelBuilder : ILogViewModelBuilder
 
     protected Dictionary<LogEventLevel, SolidColorBrush> _messageForegrounds = new();
     protected ITextFormatter? _messageTextFormatter;
+    protected SolidColorBrush? _sourceContextForeground;
+    protected ITextFormatter? _sourceContextTextFormatter;
     protected SolidColorBrush? _timestampForeground;
     protected ITextFormatter? _timestampTextFormatter;
 
@@ -39,6 +41,7 @@ public class LogViewModelBuilder : ILogViewModelBuilder
             Id = NextId++,
             Timestamp = BuildTimestampElement(logEvent),
             Level = BuildLevelElement(logEvent),
+            SourceContext = BuildSourceContextElement(logEvent),
             Message = BuildMessageElement(logEvent),
             Exception = BuildExceptionElement(logEvent),
             ExceptionVisibility = ((logEvent.Exception is not null) ? Visibility.Visible : Visibility.Collapsed)
@@ -78,6 +81,18 @@ public class LogViewModelBuilder : ILogViewModelBuilder
     public virtual LogViewModelBuilder SetMessageFormat(ITextFormatter textFormatter)
     {
         _messageTextFormatter = textFormatter;
+        return this;
+    }
+
+    public virtual LogViewModelBuilder SetSourceContextForeground(Color color)
+    {
+        _sourceContextForeground = GetSolidColorBrush(color);
+        return this;
+    }
+
+    public virtual LogViewModelBuilder SetSourceContextFormat(ITextFormatter textFormatter)
+    {
+        _sourceContextTextFormatter = textFormatter;
         return this;
     }
 
@@ -127,6 +142,12 @@ public class LogViewModelBuilder : ILogViewModelBuilder
         }
 
         return BuildLogViewModelElement(logEvent, _messageTextFormatter, foregound);
+    }
+
+    protected virtual LogViewModelElement BuildSourceContextElement(LogEvent logEvent)
+    {
+        _sourceContextForeground ??= _defaultForeground;
+        return BuildLogViewModelElement(logEvent, _sourceContextTextFormatter, _sourceContextForeground);
     }
 
     protected virtual LogViewModelElement BuildTimestampElement(LogEvent logEvent)
