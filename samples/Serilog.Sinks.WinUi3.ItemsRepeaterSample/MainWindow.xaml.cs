@@ -15,9 +15,9 @@ namespace Serilog.Sinks.WinUi3.ItemsRepeaterSample;
 
 public sealed partial class MainWindow : Window
 {
-    public ItemsRepeaterLogBroker _logBroker;
     private CancellationTokenSource? _cancellationTokenSource;
     private LoggingLevelSwitch _levelSwitch;
+    private ItemsRepeaterLogBroker _logBroker;
 
     public MainWindow()
     {
@@ -29,7 +29,8 @@ public sealed partial class MainWindow : Window
 
         _levelSwitch = new LoggingLevelSwitch();
         _levelSwitch.MinimumLevel = LogEventLevel.Verbose;
-        var levels = Enum.GetNames(typeof(LogEventLevel));
+
+        string[] levels = Enum.GetNames(typeof(LogEventLevel));
 
         foreach (string level in levels)
         {
@@ -60,6 +61,8 @@ public sealed partial class MainWindow : Window
                 .SetLevelForeground(LogEventLevel.Error, Colors.Red)
                 .SetLevelForeground(LogEventLevel.Fatal, Colors.HotPink)
 
+                .SetSourceContextFormat(new ExpressionTemplate("{Substring(SourceContext, LastIndexOf(SourceContext, '.') + 1)}"))
+
                 .SetMessageFormat(new ExpressionTemplate("{@m}"))
                 .SetMessageForeground(LogEventLevel.Verbose, Colors.Gray)
                 .SetMessageForeground(LogEventLevel.Debug, Colors.Gray)
@@ -76,8 +79,12 @@ public sealed partial class MainWindow : Window
             .WriteTo.WinUi3Control(_logBroker)
             .CreateLogger();
 
+        Logger = Log.Logger.ForContext<MainWindow>();
+
         _logBroker.IsAutoScrollOn = true;
     }
+
+    private ILogger Logger { get; set; }
 
     private void AutoScrollToggleSwitch_Toggled(object sender, RoutedEventArgs e)
     {
@@ -120,22 +127,22 @@ public sealed partial class MainWindow : Window
                         switch (value)
                         {
                             case < 7:
-                                Log.Logger.Verbose("Source:{SourceId:00} Value:{Value:00} Index:{Index:00000}", sourceId, value, index);
+                                Logger.Verbose("Source:{SourceId:00} Value:{Value:00} Index:{Index:00000}", sourceId, value, index);
                                 break;
                             case < 12:
-                                Log.Logger.Debug("Source:{SourceId:00} Value:{Value:00} Index:{Index:00000}", sourceId, value, index);
+                                Logger.Debug("Source:{SourceId:00} Value:{Value:00} Index:{Index:00000}", sourceId, value, index);
                                 break;
                             case < 16:
-                                Log.Logger.Information("Source:{SourceId:00} Value:{Value:00} Index:{Index:00000}", sourceId, value, index);
+                                Logger.Information("Source:{SourceId:00} Value:{Value:00} Index:{Index:00000}", sourceId, value, index);
                                 break;
                             case < 18:
-                                Log.Logger.Warning("Source:{SourceId:00} Value:{Value:00} Index:{Index:00000}", sourceId, value, index);
+                                Logger.Warning("Source:{SourceId:00} Value:{Value:00} Index:{Index:00000}", sourceId, value, index);
                                 break;
                             case < 19:
-                                Log.Logger.Error("Source:{SourceId:00} Value:{Value:00} Index:{Index:00000}", sourceId, value, index);
+                                Logger.Error("Source:{SourceId:00} Value:{Value:00} Index:{Index:00000}", sourceId, value, index);
                                 break;
                             default:
-                                Log.Logger.Fatal(new Exception("FATAL EXCEPTION!"), "Something wrong happened! Source:{SourceId:00} Value:{Value:0} Index:{Index:00000}", sourceId, value, index);
+                                Logger.Fatal(new Exception("FATAL EXCEPTION!"), "Something wrong happened! Source:{SourceId:00} Value:{Value:0} Index:{Index:00000}", sourceId, value, index);
                                 break;
                         }
                         index++;

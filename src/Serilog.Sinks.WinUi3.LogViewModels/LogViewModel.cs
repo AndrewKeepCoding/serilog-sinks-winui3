@@ -9,6 +9,7 @@ public record LogViewModel : ILogViewModel
     public LogEvent? LogEvent { get; set; }
     public LogViewModelElement? Timestamp { get; set; }
     public LogViewModelElement? Level { get; set; }
+    public LogViewModelElement? SourceContext { get; set; }
     public LogViewModelElement? Message { get; set; }
     public LogViewModelElement? Exception { get; set; }
     public Visibility ExceptionVisibility { get; set; }

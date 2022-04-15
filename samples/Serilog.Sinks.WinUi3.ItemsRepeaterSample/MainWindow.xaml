@@ -62,6 +62,7 @@
                 <GridLength x:Key="NumberColumnWidth">80</GridLength>
                 <GridLength x:Key="TimestampColumnWidth">240</GridLength>
                 <GridLength x:Key="LevelColumnWidth">80</GridLength>
+                <GridLength x:Key="SourceContextColumnWidth">150</GridLength>
                 <!--  Styles  -->
                 <Style x:Key="ColumnHeaderBorderStyle" TargetType="Border">
                     <Setter Property="Background" Value="{ThemeResource SystemControlBackgroundAccentBrush}" />
@@ -91,6 +92,7 @@
                     <ColumnDefinition Width="{StaticResource NumberColumnWidth}" />
                     <ColumnDefinition Width="{StaticResource TimestampColumnWidth}" />
                     <ColumnDefinition Width="{StaticResource LevelColumnWidth}" />
+                    <ColumnDefinition Width="{StaticResource SourceContextColumnWidth}" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
 
@@ -106,8 +108,12 @@
                 <Border Grid.Column="2">
                     <TextBlock Text="Level" />
                 </Border>
-                <!--  Message Column Header  -->
+                <!--  SourceContext Column Header  -->
                 <Border Grid.Column="3">
+                    <TextBlock Text="Source Context" />
+                </Border>
+                <!--  Message Column Header  -->
+                <Border Grid.Column="4">
                     <TextBlock Text="Message" />
                 </Border>
 
@@ -128,6 +134,7 @@
                                     <ColumnDefinition Width="{StaticResource NumberColumnWidth}" />
                                     <ColumnDefinition Width="{StaticResource TimestampColumnWidth}" />
                                     <ColumnDefinition Width="{StaticResource LevelColumnWidth}" />
+                                    <ColumnDefinition Width="{StaticResource SourceContextColumnWidth}" />
                                     <ColumnDefinition Width="*" />
                                 </Grid.ColumnDefinitions>
 
@@ -156,9 +163,14 @@
                                         HorizontalTextAlignment="Center"
                                         Text="{x:Bind Level.Text}" />
                                 </Grid>
-
+                                <!--  Source Context Element  -->
+                                <TextBlock
+                                    Grid.Column="3"
+                                    Foreground="{x:Bind SourceContext.Foreground}"
+                                    HorizontalTextAlignment="Center"
+                                    Text="{x:Bind SourceContext.Text}" />
                                 <!--  Message Elements  -->
-                                <Grid Grid.Column="3" ColumnDefinitions="Auto,Auto">
+                                <Grid Grid.Column="4" ColumnDefinitions="Auto,Auto">
                                     <!--  Message  -->
                                     <TextBlock
                                         Grid.Column="0"

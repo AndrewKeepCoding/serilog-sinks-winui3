@@ -28,6 +28,7 @@ public class EmojiLogViewModelBuilder : LogViewModelBuilder
             Id = NextId++,
             Timestamp = BuildTimestampElement(logEvent),
             Level = BuildLevelElement(logEvent),
+            SourceContext = BuildSourceContextElement(logEvent),
             Message = BuildMessageElement(logEvent),
             Exception = BuildExceptionElement(logEvent),
             ExceptionVisibility = ((logEvent.Exception is not null) ? Visibility.Visible : Visibility.Collapsed)
