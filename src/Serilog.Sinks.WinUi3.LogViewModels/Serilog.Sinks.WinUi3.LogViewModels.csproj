@@ -7,7 +7,7 @@
     <UseWinUI>true</UseWinUI>
     <Nullable>enable</Nullable>
     <PackageId>Serilog.Sinks.WinUi3.LogViewModels</PackageId>
-    <Version>0.1.0-alpha</Version>
+    <Version>0.2.0-alpha</Version>
     <Authors>Andrew KeepCoding</Authors>
     <Company>Andrew KeepCoding</Company>
     <Copyright>Copyright (c) Andrew KeepCoding 2022</Copyright>
@@ -21,6 +21,7 @@
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <PackageReleaseNotes>Add SourceContext support for LogViewModels.</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
