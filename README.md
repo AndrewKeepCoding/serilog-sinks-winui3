@@ -50,5 +50,10 @@ Log.Logger = new LoggerConfiguration()
     .WriteTo.WinUi3Control(_logBroker)
     .CreateLogger();
 ```
+
 ## ⚠️ Warning
 Avoid using the **ItemsRepeater** with variable height items. There is a known [bug](https://github.com/microsoft/microsoft-ui-xaml/issues/1829) on the **ItemsRepeater** and the **Microsoft Team** is still working on it.
+
+## 🎬 YouTube
+- [Coding Serilog.Sinks.WinUi3](https://youtu.be/_9lCC7yW5zQ)
+- [Implemeting Serilog.Sink.WinUi3 to the PhotoOrganizer](https://youtu.be/P44vT1B9McU)
